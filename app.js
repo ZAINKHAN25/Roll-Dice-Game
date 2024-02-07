@@ -33,7 +33,7 @@ function switchPlayer() {
 
     currentPlayerHighestScore.innerHTML = `${parseInt(currentPlayerScore.innerHTML) + parseInt(currentPlayerHighestScore.innerHTML)}`;
 
-    if (currentPlayerHighestScore.innerHTML >= 10) {
+    if (currentPlayerHighestScore.innerHTML >= 50) {
         btnofsecondpage.innerHTML = "Restart The Match";
         headingofsecondpage.innerHTML = currentPlayer ? "Player 1 Won The Match" : "Player 2 Won The Match";
         gamewrapper.classList.add("none");

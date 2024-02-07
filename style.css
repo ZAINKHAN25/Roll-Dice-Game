@@ -107,6 +107,7 @@ body {
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
+    padding: 10px 10%;
 }
 
 .btn-of-second-page{
@@ -117,7 +118,7 @@ body {
     color: white;
     font-weight: bold;
     border: none;
-    margin-top: 15px;
+    margin: 15px auto;
     cursor: pointer;
     transition: all .5s;
 }
@@ -128,4 +129,8 @@ body {
 
 .btn-of-second-page:hover{
     background-color: rgb(47, 50, 255);
+}
+
+.paraofsecondpage{
+    font-family: sans-serif;
 }
