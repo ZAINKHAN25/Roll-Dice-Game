@@ -48,7 +48,14 @@ This project is a basic web application that simulates a turn-based dice game be
 
 ## Screenshots
 
-Include screenshots or GIFs to showcase your game.
+
+![Welcome-Page](https://github.com/ZAINKHAN25/Roll-Dice-Game/assets/121414309/2a55dbab-e94d-4478-911a-a393d3556e7c)
+
+![Main Game](https://github.com/ZAINKHAN25/Roll-Dice-Game/assets/121414309/8fa4f9c4-b2d0-41e8-81c7-51d5aea22c22)
+
+![Result](https://github.com/ZAINKHAN25/Roll-Dice-Game/assets/121414309/0757205f-8358-49c6-bdcf-7f968d0f8bfb)
+
+
 
 ## Contributing
 
