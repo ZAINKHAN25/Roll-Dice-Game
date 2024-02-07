@@ -97,14 +97,35 @@ body {
 }
 
 .none{
-    display: none;
+    display: none !important;
 }
 
-.second-page{
+.secondpage{
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
+}
+
+.btn-of-second-page{
+    width: 150px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgba(47, 50, 255, 0.664);
+    color: white;
+    font-weight: bold;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.headingofsecondpage{
+    color: black !important;
+}
+
+.btn-of-second-page:hover{
+    background-color: rgb(47, 50, 255);
 }

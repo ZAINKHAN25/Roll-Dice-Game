@@ -8,53 +8,48 @@ const playerTwoHighestScore = document.querySelector("#playerTwoHighestScore");
 const playerTwoScore = document.querySelector("#playerTwoScore");
 const gamewrapper = document.querySelector(".gameWrapper");
 const secondpage = document.querySelector(".secondpage");
+const headingofsecondpage = document.querySelector(".headingofsecondpage");
+const btnofsecondpage = document.querySelector(".btn-of-second-page");
 
-let currentPlayer = true; // Agar true hai to pehle wali hoga aur false hoga to dosra wala hoga
+let currentPlayer = true; // true for player one, false for player two
 
-function rollthebtn() {
-    const newRandmNum = Math.round(Math.random() * 5 + 1)
-    rollDice.innerHTML = newRandmNum;
-    if (currentPlayer === true) {
-        playerOneScore.innerHTML = (Math.round(playerOneScore.innerHTML) + newRandmNum);
-    } else {
-        playerTwoScore.innerHTML = (Math.round(playerTwoScore.innerHTML) + newRandmNum);
-    }
-    if (newRandmNum == 1) {
-        if (currentPlayer === true) {
-            playerOneScore.innerHTML = 0;
-        } else {
-            playerTwoScore.innerHTML = 0;
-        }
+function rollTheBtn() {
+    const newRandomNum = Math.round(Math.random() * 5 + 1);
+    rollDice.innerHTML = newRandomNum;
+
+    const currentPlayerScore = currentPlayer ? playerOneScore : playerTwoScore;
+    currentPlayerScore.innerHTML = parseInt(currentPlayerScore.innerHTML) + newRandomNum;
+
+    if (newRandomNum === 1) {
+        currentPlayerScore.innerHTML = 0;
         currentPlayer = !currentPlayer;
         checkFirstTurn();
     }
 }
 
 function switchPlayer() {
+    const currentPlayerScore = currentPlayer ? playerOneScore : playerTwoScore;
+    const currentPlayerHighestScore = currentPlayer ? playerOneHighestScore : playerTwoHighestScore;
 
-    if (currentPlayer === true) {
-        playerOneHighestScore.innerHTML = `${((playerOneScore.innerHTML * 1) + (playerOneHighestScore.innerHTML * 1))}`;
-        if (playerOneHighestScore.innerHTML >= 10) {
-            gameHeading.innerHTML = "Player 1 won the match";
-            return false
-        }
-    } else {
-        playerTwoHighestScore.innerHTML = `${((playerTwoScore.innerHTML * 1) + (playerTwoHighestScore.innerHTML * 1))}`;
-        if (playerTwoHighestScore.innerHTML >= 10) {
-            gameHeading.innerHTML = "Player 2 won the match";
-            return false
-        }
+    currentPlayerHighestScore.innerHTML = `${parseInt(currentPlayerScore.innerHTML) + parseInt(currentPlayerHighestScore.innerHTML)}`;
+
+    if (currentPlayerHighestScore.innerHTML >= 10) {
+        btnofsecondpage.innerHTML = "Restart The Match";
+        headingofsecondpage.innerHTML = currentPlayer ? "Player 1 Won The Match" : "Player 2 Won The Match";
+        gamewrapper.classList.add("none");
+        secondpage.classList.remove("none");
+        playerOneHighestScore.innerHTML = 0;
+        playerTwoHighestScore.innerHTML = 0;
+        playerOneScore.innerHTML = 0;
+        playerTwoScore.innerHTML = 0;
+        rollDice.innerHTML = 0;
     }
-
 
     playerOneScore.innerHTML = 0;
     playerTwoScore.innerHTML = 0;
-
     currentPlayer = !currentPlayer;
     checkFirstTurn();
 }
-
-
 
 function checkFirstTurn() {
     if (currentPlayer === true) {
@@ -68,9 +63,9 @@ function checkFirstTurn() {
     }
 }
 
-checkFirstTurn();
-
 function startGame() {
     gamewrapper.classList.remove("none");
     secondpage.classList.add("none");
 }
+
+checkFirstTurn();
