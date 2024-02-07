@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="gameWrapper none">
+
+        <h1 class="gameHeading">Player One Turns</h1>
+
+        <span class="rollDice">0</span>
+
+
+        <div class="fathercardsdiv">
+            <div id="firstPlayerCard" class="playerCard">
+                <h3 contenteditable="true">Player One</h3>
+                <span class="playerHighestScore">Player One Highest Score: <b id="playerOneHighestScore">0</b></span>
+                <span class="playerScore">Player One Current Score: <b id="playerOneScore">0</b></span>
+            </div>
+            <div id="secondPlayerCard" class="playerCard">
+                <h3 contenteditable="true">Player Two</h3>
+                <span class="playerHighestScore">Player Two Highest Score: <b id="playerTwoHighestScore">0</b></span>
+                <span class="playerScore">Player Two Current Score: <b id="playerTwoScore">0</b></span>
+            </div>
+        </div>
+
+
+        <button onclick="rollthebtn()" class="rollBtn">Click To Roll The Dice</button>
+        <button onclick="switchPlayer()" class="switchPlayerTurn">Switch Player Turn</button>
+
+    </div>
+
+    <div class="secondpage">
+        <h2 class="headingofsecondpage">Welcome to the Roll Dice Game</h2>
+        <button onclick="startGame()" class="btn-of-second-page">Start The Game</button>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
